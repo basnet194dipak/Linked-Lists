@@ -165,7 +165,7 @@ class LinkedList{
 
     toStrings()
     {
-        const strings = ""
+        let strings = ""
 
         if (this.head == null)
         {
@@ -173,11 +173,17 @@ class LinkedList{
         }
 
         var current = this.head
-        while(current.nextNode!=null)
+        while(current!=null)
         {
-            strings + `(${String(current.value)})`
+            strings = strings + `(${String(current.value)}) -> `
             current = current.nextNode
         }
+        // console.log(current.value)
+        console.log(strings)
+        return strings + `(${String(current)})`
 
     }
+
 }
+
+export {LinkedList};
